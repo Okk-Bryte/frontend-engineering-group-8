@@ -6,8 +6,6 @@ import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import PlanetTable from "./components/PlanetTable/PlanetTable";
 
-import { PLANETS_MOCK } from "./data/planetsData";
-
 function App() {
   const [planets, setPlanets] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -44,7 +42,6 @@ function App() {
         />
         <PlanetTable />
       </main>
-      <Footer />
     </>
   );
 }
