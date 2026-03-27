@@ -1,3 +1,4 @@
+import Footer from './components/Footer'
 import Header from "./components/Header/Header";
 import Planets from "./components/Planets/Planets";
 import VideoSection from "./components/VideoSection/VideoSection";
@@ -9,6 +10,12 @@ import Table from "./components/Table/Table";
 function App() {
   return (
     <>
+      <Footer />
+    </>
+  )
+}
+
+export default App
       <Header />
       <Hero />
       <VideoSection />
