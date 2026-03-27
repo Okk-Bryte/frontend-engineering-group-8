@@ -4,9 +4,6 @@
   padding: 40px 60px;
   width: 100%;
   box-sizing: border-box;
-  border-top: 1px solid #1e3a5f;
-
-  
 }
 
 .footer-container {
@@ -105,5 +102,3 @@
     justify-content: flex-start;
   }
 }
-
-  
