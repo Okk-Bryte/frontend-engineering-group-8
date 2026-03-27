@@ -4,22 +4,26 @@ function Planets() {
   const [planets, setPlanets] = useState([]);
 
   useEffect(() => {
-    fetch("YOUR_API_ENDPOINT")
-      .then(res => res.json())
-      .then(data => setPlanets(data))
-      .catch(err => console.error(err));
+    fetch("https://anurella.github.io/json/planets.json")
+      .then(response => response.json())
+      .then(data => setPlanets(data));
   }, []);
 
   return (
     <section>
-      {planets.map(planet => (
-        <PlanetCard
-          key={planet.name}
-          name={planet.name}
-          distance={planet.distance}
-          image={planet.image}
-        />
+      <h2>Planets</h2>
+
+      {planets.map((planet, index) => (
+        <figure key={index}>
+          <img src={planet.image} alt={planet.name} width="150" />
+          <figcaption>{planet.name}</figcaption>
+          <p>Diameter: {planet.diameter}</p>
+          <p>Moons: {planet.moons}</p>
+        </figure>
       ))}
+
     </section>
   );
 }
+
+export default Planets;
