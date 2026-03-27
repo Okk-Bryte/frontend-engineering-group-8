@@ -1,16 +1,40 @@
-# React + Vite
+# Capstone Project – Solar System Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend Engineering Capstone Project (Group 8)
 
-Currently, two official plugins are available:
+## Project Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This project is a React web application that displays information about planets in the solar system using data fetched from an external API.
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* React
+* Vite
+* JavaScript
+* CSS
+* Fetch API
+* Git & GitHub
 
-## Expanding the ESLint configuration
+## API Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+https://anurella.github.io/json/planets.json
+
+## How to Run the Project
+
+```bash
+npm install
+npm run dev
+```
+
+## React + Vite
+
+This project was built using React with Vite for fast development and hot module replacement (HMR).
+
+Official plugins:
+
+* @vitejs/plugin-react
+* @vitejs/plugin-react-swc
+
+## Expanding ESLint Configuration
+
+For production applications, TypeScript and type-aware lint rules are recommended.
