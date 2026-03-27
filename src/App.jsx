@@ -1,10 +1,10 @@
 import Header from "./components/Header/Header";
 import Planets from "./components/Planets/Planets";
 import VideoSection from "./components/VideoSection/VideoSection";
-import ContactForm from "./Components/ContactForm/ContactForm";
+import ContactForm from "./components/ContactForm/ContactForm";
 import Footer from "./components/Footer/Footer";
-import Hero from "./Components/Hero/Hero";
-import Table from "./Components/Table/Table";
+import Hero from "./components/Hero/Hero";
+import Table from "./components/Table/Table";
 
 function App() {
   return (
