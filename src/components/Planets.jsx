@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import planetsData from '../data/planets.json'
-import Lightbox from './Lightbox'
+import PlanetCards from './PlanetCards'
 
 const PLANET_IMAGES = {
   Mercury: 'https://images.pexels.com/photos/39561/solar-flare-sun-eruption-energy-39561.jpeg',
@@ -73,7 +73,7 @@ export default function PlanetGallery() {
       </div>
 
       {lightbox && (
-        <Lightbox
+        <PlanetCards
           src={lightbox.src}
           alt={lightbox.alt}
           onClose={() => setLightbox(null)}

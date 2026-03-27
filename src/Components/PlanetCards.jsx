@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-export default function Lightbox({ src, alt, onClose }) {
+export default function PlanetCards({ src, alt, onClose }) {
   useEffect(() => {
     const handleKey = (e) => { if (e.key === 'Escape') onClose() }
     window.addEventListener('keydown', handleKey)
