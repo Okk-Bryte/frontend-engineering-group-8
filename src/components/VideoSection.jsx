@@ -18,18 +18,8 @@ export default function MediaSection() {
 
   return (
     <section className="media-section">
-      <div className="media-text">
-        <h2>How Planetary Data Helps Us Understand Space</h2>
-        <p>
-          Planetary science goes beyond images. Comparing{' '}
-          <strong>mass</strong>, <strong>diameter</strong>,{' '}
-          <strong>gravity</strong>, and <strong>density</strong>, we gain
-          insight into how planets form, behave, and interact within the
-          solar system.
-        </p>
-      </div>
-
-      <div className="media-visual" id="media-visual">
+      <div className="media-inner">
+        <div className="media-visual" id="media-visual">
         <video ref={videoRef} loop playsInline preload="metadata">
           <source src="/earth-planet.mp4" type="video/mp4" />
         </video>
@@ -48,6 +38,18 @@ export default function MediaSection() {
             </svg>
           )}
         </button>
+        </div>
+
+        <div className="media-text">
+          <h2>How Planetary Data Helps Us Understand Space</h2>
+          <p>
+            Planetary science goes beyond images. Comparing{' '}
+            <strong>mass</strong>, <strong>diameter</strong>,{' '}
+            <strong>gravity</strong>, and <strong>density</strong>, we gain
+            insight into how planets form, behave, and interact within the
+            solar system.
+          </p>
+        </div>
       </div>
     </section>
   )

@@ -228,19 +228,23 @@ img { display:block; max-width:100%; height:auto; }
    MEDIA SECTION
    ============================================================ */
 .media-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--sp-xl);
   padding: var(--sp-2xl) var(--sp-lg);
   background: #eaf2ff;
-  text-align: center;
 }
 
-/* TOP – heading + text */
+/* side-by-side: video left, text right */
+.media-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--sp-2xl);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
 .media-text {
-  max-width: 760px;
-  text-align: center;
+  flex: 1;
+  text-align: left;
 }
 
 .media-text h2 {
@@ -257,13 +261,12 @@ img { display:block; max-width:100%; height:auto; }
   color: var(--text-mid);
 }
 
-/* BOTTOM – wide image with play button */
+/* video container */
 .media-visual {
   position: relative;
   border-radius: var(--r-xl);
   overflow: hidden;
-  width: 100%;
-  max-width: 900px;
+  flex: 1.2;
   aspect-ratio: 16 / 9;
   box-shadow: var(--sh-xl);
 }
@@ -354,12 +357,12 @@ img { display:block; max-width:100%; height:auto; }
   margin: 0 auto;
 }
 
-/* 4-column × 2-row grid on desktop */
+/* 3-column × 3-row grid on desktop */
 .various-planets {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--sp-md);
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -382,9 +385,9 @@ img { display:block; max-width:100%; height:auto; }
   display: block;
 }
 
-/* Caption — hidden on desktop, visible on mobile */
 .planet-card-info {
-  display: none;
+  display: flex;
+  flex-direction: column;
   padding: 8px 12px 12px;
   background: var(--white);
 }
@@ -480,9 +483,10 @@ img { display:block; max-width:100%; height:auto; }
 
 .table-wrapper table {
   width: 100%;
-  min-width: 560px;
+  min-width: 640px;
   border-collapse: collapse;
   background: var(--white);
+  table-layout: fixed;
 }
 
 /* Header row */
@@ -491,24 +495,29 @@ img { display:block; max-width:100%; height:auto; }
   color: var(--white);
 }
 .table-wrapper .hdr-row th {
-  padding: 14px 12px;
+  padding: 14px 16px;
   font-size: .78rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .05em;
   white-space: nowrap;
-  text-align: left;
+  text-align: center;
   border: none;
 }
-/* centre numeric header cells */
-.table-wrapper .hdr-row th:nth-child(n+3) { text-align: center; }
+/* left-align first two header cells (Category, Type) */
+.table-wrapper .hdr-row th:nth-child(1),
+.table-wrapper .hdr-row th:nth-child(2) { text-align: center; }
 
 /* Body cells */
 .table-wrapper table td {
-  padding: 11px 12px;
+  padding: 12px 16px;
   font-size: .88rem;
   border-bottom: 1px solid var(--border);
   vertical-align: middle;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .table-wrapper table tr:last-child td { border-bottom: none; }
 
@@ -885,7 +894,8 @@ img { display:block; max-width:100%; height:auto; }
    RESPONSIVE — Tablet ≤ 1024px
    ============================================================ */
 @media (max-width: 1024px) {
-  .various-planets { grid-template-columns: repeat(2, 1fr); }
+  .various-planets { grid-template-columns: repeat(3, 1fr); }
+  .media-inner { gap: var(--sp-lg); }
 }
 
 /* ============================================================
@@ -919,13 +929,16 @@ img { display:block; max-width:100%; height:auto; }
     aspect-ratio: 1 / 1;   /* keep the globe perfectly circular on mobile */
   }
 
-  /* Media section */
-  .media-section {
+  /* Media section — stack on mobile */
+  .media-inner {
+    flex-direction: column;
     gap: var(--sp-lg);
-    padding: var(--sp-xl) var(--sp-md);
   }
+  .media-section { padding: var(--sp-xl) var(--sp-md); }
+  .media-text { text-align: center; }
+  .media-visual { width: 100%; flex: unset; }
 
-  /* Gallery — 2 columns, show captions */
+  /* Gallery — 2 columns on tablet, show captions */
   .various-planets {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--sp-sm);
