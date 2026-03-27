@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import planetsData from '../data/planets.json'
-import Lightbox from './Lightbox'
+import PlanetCards from './PlanetCards'
 
 const PLANET_IMAGES = {
   Mercury: 'https://images.pexels.com/photos/39561/solar-flare-sun-eruption-energy-39561.jpeg',
@@ -20,7 +20,7 @@ function formatDistance(km) {
 }
 
 export default function PlanetGallery() {
-  const [lightbox, setLightbox] = useState(null) // { src, alt }
+  const [lightbox, setLightbox] = useState(null)
 
   useEffect(() => {
     if (lightbox) {
@@ -46,7 +46,7 @@ export default function PlanetGallery() {
         {planetsData.map((p) => {
           const imgSrc = PLANET_IMAGES[p.planet] || p.image
           return (
-            <div
+            <button
               key={p.planet}
               className="planet-card"
               onClick={() => setLightbox({ src: imgSrc, alt: p.planet })}
@@ -67,13 +67,13 @@ export default function PlanetGallery() {
                   {formatDistance(p.distanceFromSun)}
                 </span>
               </div>
-            </div>
+            </button>
           )
         })}
       </div>
 
       {lightbox && (
-        <Lightbox
+        <PlanetCards
           src={lightbox.src}
           alt={lightbox.alt}
           onClose={() => setLightbox(null)}
