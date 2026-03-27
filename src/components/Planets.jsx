@@ -20,7 +20,7 @@ function formatDistance(km) {
 }
 
 export default function PlanetGallery() {
-  const [lightbox, setLightbox] = useState(null) // { src, alt }
+  const [lightbox, setLightbox] = useState(null)
 
   useEffect(() => {
     if (lightbox) {
@@ -46,7 +46,7 @@ export default function PlanetGallery() {
         {planetsData.map((p) => {
           const imgSrc = PLANET_IMAGES[p.planet] || p.image
           return (
-            <div
+            <button
               key={p.planet}
               className="planet-card"
               onClick={() => setLightbox({ src: imgSrc, alt: p.planet })}
@@ -67,7 +67,7 @@ export default function PlanetGallery() {
                   {formatDistance(p.distanceFromSun)}
                 </span>
               </div>
-            </div>
+            </button>
           )
         })}
       </div>

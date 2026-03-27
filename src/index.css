@@ -373,6 +373,11 @@ img { display:block; max-width:100%; height:auto; }
   box-shadow: var(--sh-sm);
   cursor: pointer;
   transition: box-shadow .25s ease;
+  border: none;
+  padding: 0;
+  text-align: left;
+  display: block;
+  width: 100%;
 }
 .planet-card:hover {
   box-shadow: var(--sh-lg);
