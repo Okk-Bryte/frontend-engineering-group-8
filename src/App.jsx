@@ -2,9 +2,9 @@ import { useState, useEffect, useRef } from "react";
 
 import "./styles/global.css";
 
-import Navbar from "./components/Navbar/Navbar";
-import Hero from "./components/Hero/Hero";
-import PlanetTable from "./components/PlanetTable/PlanetTable";
+import Navbar from "./components/Navbar/Navbar.jsx";
+import Hero from "./components/Hero/Hero.jsx";
+import PlanetTable from "./components/PlanetTable/PlanetTable.jsx";
 
 function App() {
   const [planets, setPlanets] = useState([]);
