@@ -6,6 +6,13 @@ Frontend Engineering Capstone Project (Group 8)
 
 This project is a React web application that displays information about planets in the solar system using data fetched from an external API.
 
+## Names of all Group members
+1. Okeke Kosisochukwu Bright
+2. Seanam Ekanem
+3. Ifeoluwa Ashola
+4. Tabi Kelvin Ayo
+5. Ebhodaghe Jeremiah
+
 ## Technologies Used
 
 * React
