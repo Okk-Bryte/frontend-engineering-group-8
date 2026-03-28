@@ -52,6 +52,15 @@
   filter: drop-shadow(0 0 60px rgba(116, 156, 241, 0.5));
 }
 
+.btn-outline {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
 @media (max-width: 900px) {
   .hero {
     padding: 48px 24px;
