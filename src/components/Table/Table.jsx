@@ -28,48 +28,30 @@ function PlanetTable() {
 
           <tbody>
             {TABLE_DATA.map((group, gi) =>
-              group.planets.map((planet, pi) => {
-                let extraRows = 0;
-
-                if (
-                  gi + 1 < TABLE_DATA.length &&
-                  TABLE_DATA[gi + 1].category === null
-                ) {
-                  extraRows = TABLE_DATA[gi + 1].planets.length;
-                }
-
-                return (
-                  <tr key={`${gi}-${pi}`}>
-                    {/* Category */}
-                    {pi === 0 && group.category && (
-                      <td
-                        className="cat-cell"
-                        rowSpan={group.planets.length + extraRows}
-                      >
-                        {group.category}
-                      </td>
-                    )}
-
-                    {!group.category && <td className="cat-cell"></td>}
-
-                    {/* Subcategory */}
-                    {pi === 0 && group.subCategory ? (
-                      <td className="cat-cell" rowSpan={group.planets.length}>
-                        {group.subCategory}
-                      </td>
-                    ) : !group.subCategory && pi === 0 ? (
-                      <td className="cat-cell" rowSpan={group.planets.length}></td>
-                    ) : null}
-
-                    {/* Planet Data */}
-                    <td>{planet.name}</td>
-                    <td>{planet.mass}</td>
-                    <td>{planet.diameter.toLocaleString()}</td>
-                    <td>{planet.density.toLocaleString()}</td>
-                    <td>{planet.gravity}</td>
-                  </tr>
-                );
-              })
+              group.planets.map((planet, pi) => (
+                <tr key={`${gi}-${pi}`}>
+                  {/* Category */}
+                  {pi === 0 && group.category && (
+                    <td className="cat-cell" rowSpan={group.planets.length}>
+                      {group.category}
+                    </td>
+                  )}
+          
+                  {/* Subcategory */}
+                  {pi === 0 && (
+                    <td className="cat-cell" rowSpan={group.planets.length}>
+                      {group.subCategory || ""}
+                    </td>
+                  )}
+          
+                  {/* Planet Data */}
+                  <td className="name-cell">{planet.name}</td>
+                  <td className="num-cell">{planet.mass}</td>
+                  <td className="num-cell">{planet.diameter.toLocaleString()}</td>
+                  <td className="num-cell">{planet.density}</td>
+                  <td className="num-cell">{planet.gravity}</td>
+                </tr>
+              ))
             )}
           </tbody>
         </table>
