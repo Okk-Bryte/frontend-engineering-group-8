@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './Planets.css'
 import planetsData from '../../data/planets.json'
-import PlanetCard from '../PlanetCard'
+import PlanetCard from '../PlanetCard.jsx'
 
 const PLANET_IMAGES = {
   Mercury: 'https://images.pexels.com/photos/39561/solar-flare-sun-eruption-energy-39561.jpeg',
