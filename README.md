@@ -51,4 +51,4 @@ To run this project locally on your computer, follow these steps:
 
 
 ## Live Deployment Link
-https://frontend-group-8-capstone-project.netlify.app/
+https://frontend-engineering-group-8.netlify.app
