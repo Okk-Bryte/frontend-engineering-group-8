@@ -17,12 +17,12 @@ function PlanetTable() {
         <table aria-label="Planets data table">
           <thead>
             <tr>
-              <th colSpan={2} style={{ textAlign: 'left' }}></th>
+              <th colSpan={2}></th>
               <th>Name</th>
-              <th>Mass (10 24kg)</th>
+              <th>Mass (10<sup>24</sup>kg)</th>
               <th>Diameter (km)</th>
-              <th>Density (kg/m3)</th>
-              <th>Gravity (m/s2)</th>
+              <th>Density (kg/m<sup>3</sup>)</th>
+              <th>Gravity (m/s<sup>2</sup>)</th>
             </tr>
           </thead>
           <tbody>
