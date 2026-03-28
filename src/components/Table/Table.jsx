@@ -1,4 +1,4 @@
-import { TABLE_DATA } from '../../data/planetsData.js';
+import { TABLE_DATA } from '../../planetsData.js';
 import './Table.css';
 
 function PlanetTable() {
@@ -17,7 +17,7 @@ function PlanetTable() {
         <table aria-label="Planets data table">
           <thead>
             <tr>
-              <th colSpan={2}></th>
+              <th colSpan={2} style={{ textAlign: 'left' }}></th>
               <th>Name</th>
               <th>Mass (10<sup>24</sup>kg)</th>
               <th>Diameter (km)</th>
@@ -25,38 +25,51 @@ function PlanetTable() {
               <th>Gravity (m/s<sup>2</sup>)</th>
             </tr>
           </thead>
+
           <tbody>
             {TABLE_DATA.map((group, gi) =>
-              group.planets.map((planet, pi) => (
-                <tr key={`${gi}-${pi}`}>
-                  {pi === 0 && group.category && (
-                    <td
-                      className="cat-cell"
-                      rowSpan={
-                        group.planets.length +
-                        (TABLE_DATA[gi + 1]?.category === null && gi + 1 < TABLE_DATA.length
-                          ? TABLE_DATA[gi + 1].planets.length
-                          : 0)
-                      }
-                    >
-                      {group.category}
-                    </td>
-                  )}
-                  {!group.category && <td className="cat-cell"></td>}
-                  {pi === 0 && group.subCategory ? (
-                    <td className="cat-cell" rowSpan={group.planets.length}>
-                      {group.subCategory}
-                    </td>
-                  ) : !group.subCategory && pi === 0 ? (
-                    <td className="cat-cell" rowSpan={group.planets.length}></td>
-                  ) : null}
-                  <td>{planet.name}</td>
-                  <td>{planet.mass}</td>
-                  <td>{planet.diameter.toLocaleString()}</td>
-                  <td>{planet.density.toLocaleString()}</td>
-                  <td>{planet.gravity}</td>
-                </tr>
-              ))
+              group.planets.map((planet, pi) => {
+                let extraRows = 0;
+
+                if (
+                  gi + 1 < TABLE_DATA.length &&
+                  TABLE_DATA[gi + 1].category === null
+                ) {
+                  extraRows = TABLE_DATA[gi + 1].planets.length;
+                }
+
+                return (
+                  <tr key={`${gi}-${pi}`}>
+                    {/* Category */}
+                    {pi === 0 && group.category && (
+                      <td
+                        className="cat-cell"
+                        rowSpan={group.planets.length + extraRows}
+                      >
+                        {group.category}
+                      </td>
+                    )}
+
+                    {!group.category && <td className="cat-cell"></td>}
+
+                    {/* Subcategory */}
+                    {pi === 0 && group.subCategory ? (
+                      <td className="cat-cell" rowSpan={group.planets.length}>
+                        {group.subCategory}
+                      </td>
+                    ) : !group.subCategory && pi === 0 ? (
+                      <td className="cat-cell" rowSpan={group.planets.length}></td>
+                    ) : null}
+
+                    {/* Planet Data */}
+                    <td>{planet.name}</td>
+                    <td>{planet.mass}</td>
+                    <td>{planet.diameter.toLocaleString()}</td>
+                    <td>{planet.density.toLocaleString()}</td>
+                    <td>{planet.gravity}</td>
+                  </tr>
+                );
+              })
             )}
           </tbody>
         </table>
@@ -64,4 +77,5 @@ function PlanetTable() {
     </section>
   );
 }
+
 export default PlanetTable;
