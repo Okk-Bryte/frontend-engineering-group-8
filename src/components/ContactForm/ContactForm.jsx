@@ -31,125 +31,124 @@ function ContactForm({ contactRef }) {
     if (errors[name]) setErrors((err) => ({ ...err, [name]: '' }));
   };
 
-  const handleSubmit = () => {
+  // ✅ ENDPOINT ADDED HERE
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
     const errs = validate();
     if (Object.keys(errs).length) {
       setErrors(errs);
       return;
     }
-    // Replace with actual API endpoint:
-    // fetch('https://your-api.com/contact', { method: 'POST', body: JSON.stringify(form) })
-    setSubmitted(true);
-    setForm({ name: '', email: '', phone: '', message: '' });
-    setCharCount(0);
+
+    try {
+      const response = await fetch("https://whitebricks.com/tsacademy.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setForm({ name: '', email: '', phone: '', message: '' });
+        setCharCount(0);
+        setErrors({});
+      } else {
+        alert("Submission failed.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Network error.");
+    }
   };
 
   return (
-    <section className="contact-section" ref={contactRef} id="contact" aria-label="Contact section">
+    <section className="contact-section" ref={contactRef} id="contact">
       <h2>Have Questions About Planetary Science?</h2>
       <p className="contact-desc">
         Interested in learning more about space, astronomy, or how planetary data is collected and
-        analyzed? Reach out and we'll get back to you.
+        analysed? Reach out, and we'll get back to you.
       </p>
 
-<div className="form-container" role="form" aria-label="Contact form">
-  <div className="form-grid">
-        {/* Full Name */}
-        <div className="form-group">
-          <label htmlFor="name">
-            Full Name<span aria-hidden="true">*</span>
-          </label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            placeholder="Full name"
-            value={form.name}
-            onChange={handleChange}
-            className={errors.name ? 'error' : ''}
-            aria-required="true"
-            aria-describedby={errors.name ? 'name-error' : undefined}
-          />
-          {errors.name && (
-            <span className="field-error" id="name-error" role="alert">
-              {errors.name}
-            </span>
-          )}
+      <form className="form-container" onSubmit={handleSubmit}>
+        <div className="form-grid">
+          {/* Full Name */}
+          <div className="form-group">
+            <label htmlFor="name">Full Name<span>*</span></label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Full name"
+              value={form.name}
+              onChange={handleChange}
+              className={errors.name ? 'error' : ''}
+            />
+            {errors.name && <span className="field-error">{errors.name}</span>}
+          </div>
+
+          {/* Email */}
+          <div className="form-group">
+            <label htmlFor="email">Email<span>*</span></label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="example@example.com"
+              value={form.email}
+              onChange={handleChange}
+              className={errors.email ? 'error' : ''}
+            />
+            {errors.email && <span className="field-error">{errors.email}</span>}
+          </div>
+
+          {/* Phone */}
+          <div className="form-group">
+            <label htmlFor="phone">Phone Number<span>*</span></label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              placeholder="Please enter a valid phone number."
+              value={form.phone}
+              onChange={handleChange}
+              className={errors.phone ? 'error' : ''}
+            />
+            {errors.phone && <span className="field-error">{errors.phone}</span>}
+          </div>
+
+          {/* Message */}
+          <div className="form-group">
+            <label htmlFor="message">Message<span>*</span></label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Enter your message"
+              value={form.message}
+              onChange={handleChange}
+              maxLength={100}
+              className={errors.message ? 'error' : ''}
+            />
+            <span className="char-count">{100 - charCount} characters</span>
+            {errors.message && <span className="field-error">{errors.message}</span>}
+          </div>
         </div>
 
-        {/* Email */}
-        <div className="form-group">
-          <label htmlFor="email">
-            Email<span aria-hidden="true">*</span>
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            placeholder="example@example.com"
-            value={form.email}
-            onChange={handleChange}
-            className={errors.email ? 'error' : ''}
-            aria-required="true"
-            aria-describedby={errors.email ? 'email-error' : undefined}
-          />
-          {errors.email && (
-            <span className="field-error" id="email-error" role="alert">
-              {errors.email}
-            </span>
-          )}
-        </div>
+        {/* Submit button INSIDE form */}
+        <button className="submit-btn" type="submit">
+          Submit ›
+        </button>
 
-        {/* Phone */}
-        <div className="form-group">
-          <label htmlFor="phone">
-            Phone Number<span aria-hidden="true">*</span>
-          </label>
-          <input
-            id="phone"
-            name="phone"
-            type="tel"
-            placeholder="Please enter a valid phone number."
-            value={form.phone}
-            onChange={handleChange}
-            className={errors.phone ? 'error' : ''}
-            aria-required="true"
-            aria-describedby={errors.phone ? 'phone-error' : undefined}
-          />
-          {errors.phone && (
-            <span className="field-error" id="phone-error" role="alert">
-              {errors.phone}
-            </span>
-          )}
-        </div>
-
-        {/* Message */}
-        <div className="form-group">
-          <label htmlFor="message">
-            Message<span aria-hidden="true">*</span>
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            placeholder="Enter your message"
-            value={form.message}
-            onChange={handleChange}
-            maxLength={100}
-            className={errors.message ? 'error' : ''}
-            aria-required="true"
-            aria-describedby={errors.message ? 'message-error' : 'char-count'}
-          />
-          <span className="char-count" id="char-count">
-            {100 - charCount} characters
-          </span>
-          {errors.message && (
-            <span className="field-error" id="message-error" role="alert">
-              {errors.message}
-            </span>
-          )}
-        </div>
-  
-</div>
+        {/* Success message */}
+        {submitted && (
+          <div className="success-msg">
+            ✓ Thank you! Your message has been submitted successfully.
+          </div>
+        )}
+      </form>
+    </section>
   );
 }
 
