@@ -49,5 +49,6 @@ To run this project locally on your computer, follow these steps:
 ## After running the last command, open the local server link shown in the terminal (usually http://localhost:5173
 ## ) in your browser to view the project.
 
+
 ## Live Deployment Link
 https://frontend-group-8-capstone-project.netlify.app/
