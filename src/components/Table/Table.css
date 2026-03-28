@@ -1,103 +1,52 @@
 .table-section {
-  background: var(--white);
-  padding: 80px 80px;
-}
-
-.table-section h2 {
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--blue-text);
-  margin-bottom: 12px;
+  margin: 40px auto;
+  max-width: 1100px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .section-desc {
-  font-size: 15px;
-  color: var(--text-mid);
-  margin-bottom: 40px;
-  max-width: 680px;
+  color: #555;
+  margin-bottom: 10px;
 }
 
 .table-label {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--text-dark);
-  margin-bottom: 16px;
+  font-style: italic;
+  margin-bottom: 15px;
+  color: #333;
 }
 
 .table-container {
-  overflow-x: auto;
-  border-radius: 12px;
-  border: 1px solid var(--border-blue);
+  background: #f5f7fa;
+  padding: 20px;
+  border-radius: 8px;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+  background: white;
+}
+
+thead {
+  background: #e9edf2;
+}
+
+th, td {
+  border: 1px solid #d6dbe1;
+  padding: 10px 12px;
+  text-align: left;
   font-size: 14px;
 }
 
-thead tr {
-  background: var(--table-header);
-  color: var(--white);
-}
-
-thead th {
-  padding: 16px 20px;
-  text-align: center;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  border-right: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-thead th:last-child {
-  border-right: none;
-}
-
-tbody td {
-  padding: 14px 20px;
-  text-align: center;
-  border-right: 1px solid var(--border-blue);
-  border-bottom: 1px solid var(--border-blue);
-  color: var(--text-dark);
-}
-
-tbody td:last-child {
-  border-right: none;
-}
-
-tbody tr:last-child td {
-  border-bottom: none;
+th {
+  font-weight: bold;
 }
 
 .cat-cell {
-  background: #dbeafe;
-  font-weight: 700;
-  color: var(--text-dark);
-  vertical-align: middle;
-  text-align: center;
+  background: #f0f3f7;
+  font-weight: bold;
 }
 
-tbody tr:nth-child(odd) td:not(.cat-cell) {
-  background: var(--table-row-odd);
-}
-
-tbody tr:nth-child(even) td:not(.cat-cell) {
-  background: var(--table-row-even);
-}
-
-@media (max-width: 900px) {
-  .table-section {
-    padding: 60px 24px;
-  }
-}
-
-@media (max-width: 600px) {
-  table {
-    font-size: 12px;
-  }
-
-  thead th,
-  tbody td {
-    padding: 10px 8px;
-  }
+tbody tr:hover {
+  background: #f9fbfd;
 }
