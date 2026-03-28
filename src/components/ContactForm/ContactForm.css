@@ -7,6 +7,18 @@
   align-items: center;
 }
 
+.contact-section h2 {
+  color: #164baf;
+}
+
+.submit-btn {
+  background: #164baf;
+}
+
+.submit-btn:hover {
+  background: #123a87;
+}
+
 /* Heading */
 .contact-section h2 {
   font-size: 32px;
