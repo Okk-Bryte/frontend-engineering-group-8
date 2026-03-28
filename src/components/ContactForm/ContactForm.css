@@ -15,11 +15,6 @@
   text-align: left;
 }
 
-.submit-btn {
-  background: #164baf;
-  align-self: flex-start;
-}
-
 /* Description */
 .contact-desc {
   font-size: 15px;
@@ -127,19 +122,19 @@
 
 /* Button */
 .submit-btn {
-  background: var(--blue-btn);
   color: var(--white);
   border: none;
   padding: 16px 40px;
-  border-radius: 8px;
+  border-radius: 6px;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 450;
   cursor: pointer;
   display: inline-flex;
-  align-items: center;
+  align-items: left;
   gap: 8px;
   margin-top: 10px;
   transition: background 0.2s, transform 0.15s;
+  background: #164baf;
   align-self: flex-start;
 }
 
