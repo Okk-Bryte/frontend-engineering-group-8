@@ -1,5 +1,5 @@
 import "./Hero.css";
-import planet1 from "../assets/planet1.png";
+import planetimage from "../../assets/planet1.png";
 
 function Hero({ onExploreClick, onContactClick }) {
   return (
