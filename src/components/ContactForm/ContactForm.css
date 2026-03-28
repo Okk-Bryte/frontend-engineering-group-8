@@ -28,6 +28,22 @@
   text-align: center;
 }
 
+.contact-section h2 {
+  color: #164baf;
+}
+
+.submit-btn {
+  background: #164baf;
+}
+
+.submit-btn:hover {
+  background: #123a87;
+}
+
+.submit-btn {
+  align-self: flex-start;
+}
+
 /* Description */
 .contact-desc {
   font-size: 15px;
@@ -51,14 +67,16 @@
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "name email"
+    "phone message";
   gap: 24px 32px;
   width: 100%;
 }
-
-/* Make message full width */
-.form-group:nth-child(4) {
-  grid-column: span 2;
-}
+.form-group:nth-child(1) { grid-area: name; }
+.form-group:nth-child(2) { grid-area: email; }
+.form-group:nth-child(3) { grid-area: phone; }
+.form-group:nth-child(4) { grid-area: message; }
 
 .form-group {
   display: flex;
