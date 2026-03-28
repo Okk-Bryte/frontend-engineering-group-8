@@ -7,40 +7,17 @@
   align-items: center;
 }
 
-.contact-section h2 {
-  color: #164baf;
-}
-
-.submit-btn {
-  background: #164baf;
-}
-
-.submit-btn:hover {
-  background: #123a87;
-}
-
 /* Heading */
 .contact-section h2 {
   font-size: 32px;
   font-weight: 700;
-  color: var(--blue-text);
+  color: #164baf;
   margin-bottom: 16px;
   text-align: center;
 }
 
-.contact-section h2 {
-  color: #164baf;
-}
-
 .submit-btn {
   background: #164baf;
-}
-
-.submit-btn:hover {
-  background: #123a87;
-}
-
-.submit-btn {
   align-self: flex-start;
 }
 
