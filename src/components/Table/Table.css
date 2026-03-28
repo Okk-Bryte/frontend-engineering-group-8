@@ -1,52 +1,83 @@
 .table-section {
   margin: 40px auto;
-  max-width: 1100px;
+  max-width: 1000px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.table-section h2 {
+  color: #2a5db0;
+  margin-bottom: 8px;
+}
+
 .section-desc {
-  color: #555;
-  margin-bottom: 10px;
+  color: #444;
+  font-size: 14px;
+  margin-bottom: 20px;
 }
 
 .table-label {
-  font-style: italic;
-  margin-bottom: 15px;
-  color: #333;
+  font-size: 13px;
+  margin-bottom: 8px;
 }
 
+/* Table container */
 .table-container {
-  background: #f5f7fa;
-  padding: 20px;
-  border-radius: 8px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
+/* Table */
 table {
   width: 100%;
   border-collapse: collapse;
-  background: white;
 }
 
-thead {
-  background: #e9edf2;
+/* Header */
+thead th {
+  background-color: #164baf;
+  color: white;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ffffff55;
+  text-align: center;
 }
 
-th, td {
-  border: 1px solid #d6dbe1;
-  padding: 10px 12px;
-  text-align: left;
+/* Body cells */
+tbody td {
+  background-color: #f2f7ff;
+  padding: 12px;
+  border: 1px solid #ffffff;
   font-size: 14px;
 }
 
-th {
-  font-weight: bold;
-}
-
+/* Left category columns */
 .cat-cell {
-  background: #f0f3f7;
+  background-color: #d1e3ff !important;
   font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
 }
 
-tbody tr:hover {
-  background: #f9fbfd;
+/* Planet name */
+.name-cell {
+  text-align: left;
+}
+
+/* Numbers */
+.num-cell {
+  text-align: center;
+}
+
+/* Rounded corners */
+thead th:first-child {
+  border-top-left-radius: 10px;
+}
+thead th:last-child {
+  border-top-right-radius: 10px;
+}
+tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
 }
