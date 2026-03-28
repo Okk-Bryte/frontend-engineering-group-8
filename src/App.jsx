@@ -3,11 +3,10 @@ import Hero from "./components/Hero/Hero";
 import VideoSection from "./components/VideoSection/VideoSection";
 import Planets from "./components/Planets/Planets";
 import Table from "./components/Table/Table"
-// import ContactForm from "./components/ContactForm/ContactForm";
+import ContactForm from "./components/ContactForm/ContactForm";
 import Footer from "./components/Footer/Footer";
 
-
-export default function App() {
+function App() {
   return (
     <>
       <Header />
@@ -15,7 +14,10 @@ export default function App() {
       <VideoSection />
       <Planets />
       <Table />
+      <ContactForm />
       <Footer />
     </>
-  )
+  );
 }
+
+export default App;
