@@ -1,0 +1,129 @@
+.contact-section {
+  background: var(--white);
+  padding: 80px 80px;
+  border-top: 1px solid var(--border);
+}
+
+.contact-section h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--blue-text);
+  margin-bottom: 12px;
+}
+
+.contact-desc {
+  font-size: 15px;
+  color: var(--text-mid);
+  margin-bottom: 40px;
+  max-width: 640px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 32px;
+  max-width: 1100px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.form-group label span {
+  color: var(--error);
+  margin-left: 2px;
+}
+
+.form-group input,
+.form-group textarea {
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
+  outline: none;
+  transition: border-color 0.2s;
+  background: var(--white);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #cbd5e1;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--blue-btn);
+}
+
+.form-group input.error,
+.form-group textarea.error {
+  border-color: var(--error);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.char-count {
+  font-size: 12px;
+  color: var(--text-light);
+  text-align: right;
+}
+
+.field-error {
+  font-size: 12px;
+  color: var(--error);
+}
+
+.submit-btn {
+  background: var(--blue-btn);
+  color: var(--white);
+  border: none;
+  padding: 16px 48px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  transition: background 0.2s;
+  width: fit-content;
+}
+
+.submit-btn:hover {
+  background: #1d4ed8;
+}
+
+.success-msg {
+  background: #dcfce7;
+  border: 1px solid #86efac;
+  color: #15803d;
+  padding: 16px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-top: 16px;
+  max-width: 500px;
+}
+
+@media (max-width: 900px) {
+  .contact-section {
+    padding: 60px 24px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
