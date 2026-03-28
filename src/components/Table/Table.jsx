@@ -1,7 +1,7 @@
 import { TABLE_DATA } from "../../data/planetsData";
-import "./PlanetTable.css";
+import "./Table.css";
 
-function PlanetTable() {
+function Table() {
   return (
     <section className="table-section" aria-label="Planetary facts table">
       <h2>Planetary Facts at a Glance</h2>
@@ -71,4 +71,4 @@ function PlanetTable() {
   );
 }
 
-export default PlanetTable;
+export default Table;
