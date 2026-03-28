@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import './Planets.css'
 import planetsData from '../data/planets.json'
 import PlanetCards from './PlanetCards'
 
