@@ -28,30 +28,43 @@ function PlanetTable() {
 
           <tbody>
             {TABLE_DATA.map((group, gi) =>
-              group.planets.map((planet, pi) => (
-                <tr key={`${gi}-${pi}`}>
-                  {/* Category */}
-                  {pi === 0 && group.category && (
-                    <td className="cat-cell" rowSpan={group.planets.length}>
-                      {group.category}
-                    </td>
-                  )}
+              group.planets.map((planet, pi) => {
           
-                  {/* Subcategory */}
-                  {pi === 0 && (
-                    <td className="cat-cell" rowSpan={group.planets.length}>
-                      {group.subCategory || ""}
-                    </td>
-                  )}
+                // FIX: calculate correct rowspan for Jovian
+                let rowSpan = group.planets.length;
           
-                  {/* Planet Data */}
-                  <td className="name-cell">{planet.name}</td>
-                  <td className="num-cell">{planet.mass}</td>
-                  <td className="num-cell">{planet.diameter.toLocaleString()}</td>
-                  <td className="num-cell">{planet.density}</td>
-                  <td className="num-cell">{planet.gravity}</td>
-                </tr>
-              ))
+                if (group.category === "Jovian Planets") {
+                  rowSpan =
+                    group.planets.length +
+                    (TABLE_DATA[gi + 1]?.planets.length || 0);
+                }
+          
+                return (
+                  <tr key={`${gi}-${pi}`}>
+          
+                    {/* CATEGORY */}
+                    {pi === 0 && group.category && (
+                      <td className="cat-cell" rowSpan={rowSpan}>
+                        {group.category}
+                      </td>
+                    )}
+          
+                    {/* SUBCATEGORY */}
+                    {pi === 0 && (
+                      <td className="cat-cell" rowSpan={group.planets.length}>
+                        {group.subCategory || ""}
+                      </td>
+                    )}
+          
+                    {/* DATA */}
+                    <td className="name-cell">{planet.name}</td>
+                    <td className="num-cell">{planet.mass}</td>
+                    <td className="num-cell">{planet.diameter.toLocaleString()}</td>
+                    <td className="num-cell">{planet.density}</td>
+                    <td className="num-cell">{planet.gravity}</td>
+                  </tr>
+                );
+              })
             )}
           </tbody>
         </table>
