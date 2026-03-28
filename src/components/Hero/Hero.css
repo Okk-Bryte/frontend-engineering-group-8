@@ -55,7 +55,7 @@
 .btn-outline {
   background-color: transparent;
   color: white;
-  width: 135px;
+  width: 125px;
   border: 1px solid white;
   padding: 10px 25px;
   cursor: pointer;
@@ -63,11 +63,11 @@
 }
 
 .btn-primary {
-  width: 135px;
+  width: 125px;
   padding: 10px 25px;
   cursor: pointer;
   border-radius: 6px;
-  font-weight: normal;
+  font-weight: 350;
 }
 
 @media (max-width: 900px) {
