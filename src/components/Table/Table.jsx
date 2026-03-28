@@ -1,4 +1,4 @@
-import { TABLE_DATA } from "../../data/planetsData";
+import { TABLE_DATA } from "../../data/planets.json";
 import "./Table.css";
 
 function Table() {
