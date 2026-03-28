@@ -55,11 +55,19 @@
 .btn-outline {
   background-color: transparent;
   color: white;
-  width: 130px;
+  width: 150px;
   border: 1px solid white;
   padding: 11px 26px;
   cursor: pointer;
   border-radius: 6px;
+}
+
+.btn-primary {
+  width: 150px;
+  padding: 11px 26px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 400;
 }
 
 @media (max-width: 900px) {
