@@ -31,7 +31,6 @@ function ContactForm({ contactRef }) {
     if (errors[name]) setErrors((err) => ({ ...err, [name]: '' }));
   };
 
-  // ✅ ENDPOINT ADDED HERE
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -67,14 +66,15 @@ function ContactForm({ contactRef }) {
   return (
     <section className="contact-section" ref={contactRef} id="contact">
       <h2>Have Questions About Planetary Science?</h2>
+
       <p className="contact-desc">
         Interested in learning more about space, astronomy, or how planetary data is collected and
-        analysed? Reach out, and we'll get back to you.
+        analysed? Reach out and we'll get back to you.
       </p>
 
       <form className="form-container" onSubmit={handleSubmit}>
         <div className="form-grid">
-          {/* Full Name */}
+
           <div className="form-group">
             <label htmlFor="name">Full Name<span>*</span></label>
             <input
@@ -89,7 +89,6 @@ function ContactForm({ contactRef }) {
             {errors.name && <span className="field-error">{errors.name}</span>}
           </div>
 
-          {/* Email */}
           <div className="form-group">
             <label htmlFor="email">Email<span>*</span></label>
             <input
@@ -104,7 +103,6 @@ function ContactForm({ contactRef }) {
             {errors.email && <span className="field-error">{errors.email}</span>}
           </div>
 
-          {/* Phone */}
           <div className="form-group">
             <label htmlFor="phone">Phone Number<span>*</span></label>
             <input
@@ -119,7 +117,6 @@ function ContactForm({ contactRef }) {
             {errors.phone && <span className="field-error">{errors.phone}</span>}
           </div>
 
-          {/* Message */}
           <div className="form-group">
             <label htmlFor="message">Message<span>*</span></label>
             <textarea
@@ -134,14 +131,13 @@ function ContactForm({ contactRef }) {
             <span className="char-count">{100 - charCount} characters</span>
             {errors.message && <span className="field-error">{errors.message}</span>}
           </div>
+
         </div>
 
-        {/* Submit button INSIDE form */}
         <button className="submit-btn" type="submit">
           Submit ›
         </button>
 
-        {/* Success message */}
         {submitted && (
           <div className="success-msg">
             ✓ Thank you! Your message has been submitted successfully.
