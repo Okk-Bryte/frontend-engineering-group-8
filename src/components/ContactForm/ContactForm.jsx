@@ -52,7 +52,8 @@ function ContactForm({ contactRef }) {
         analyzed? Reach out and we'll get back to you.
       </p>
 
-      <div className="form-grid" role="form" aria-label="Contact form">
+<div className="form-container" role="form" aria-label="Contact form">
+  <div className="form-grid">
         {/* Full Name */}
         <div className="form-group">
           <label htmlFor="name">
@@ -147,18 +148,8 @@ function ContactForm({ contactRef }) {
             </span>
           )}
         </div>
-      </div>
-
-      <button className="submit-btn" onClick={handleSubmit} type="button" aria-label="Submit contact form">
-        Submit &nbsp;›
-      </button>
-
-      {submitted && (
-        <div className="success-msg" role="alert" aria-live="polite">
-          ✓ Thank you! Your message has been submitted successfully.
-        </div>
-      )}
-    </section>
+  
+</div>
   );
 }
 
