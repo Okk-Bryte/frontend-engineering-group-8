@@ -109,7 +109,7 @@
 /* Textarea */
 .form-group textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: 50px;
 }
 
 /* Character count */
