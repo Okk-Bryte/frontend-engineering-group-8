@@ -1,54 +1,53 @@
-# Capstone Project – Solar System Explorer
-
-Frontend Engineering Capstone Project (Group 8)
+# CAPSTONE PROJECT – SOLAR SYSTEM EXPLORER
+## Frontend Engineering Capstone Project (Group 8)
 
 ## Project Summary
+This project is a React web application that displays information about planets in the solar system using data fetched from an external API. It is a joint group project at the end of our Frontend program to simulate the creation of real-world, professional web applications/websites with a deadline.
 
-This project is a React web application that displays information about planets in the solar system using data fetched from an external API. It's a joint group project at the end of our Frontend program to help simulate real-world, professional web apps/websites, with a deadline and creation.
-
-## Names of all Group members
-1. Okeke Kosisochukwu Bright - [Team Leader]
+## Names of All Group Members
+1. Okeke Kosisochukwu Bright - https://github.com/Okk-Bryte [Team Leader]
 2. Ifeoluwa Ashola - https://github.com/Ifeoluwa-ash [Assistant Team Leader]
 3. Seanam Ekanem - https://github.com/seanam977-sketch
 4. Tabi Kelvin Ayo - https://github.com/michaelkeane036-cmyk
 5. Ebhodaghe Jeremiah - https://github.com/DaBlaq1
 6. Mette Jude Chukwunonso - Https://github.com/judechukwunonso5-web
-7. Ajibose Timilehin - 
+7. Ajibose Timilehin - https://github.com/zeusagba
 
-## Components or Functions of those who worked on it.
-A few members of the group originally assigned participated in this project; their roles were:
-1. Okeke Kosisochukwu Bright - Team Leader, Repository creator, owner, PR reviewer, editor and merger.
-2. 
+## Components or Functions - Who Worked on it?
+A few members of Group 8 who were originally assigned participated in this project. Their roles were:
+1. Okeke Kosisochukwu Bright – Team Leader, repository creator, PR reviewer, editor, and merger. I worked on the ContactForm component.
+2. Ifeoluwa Ashola – Worked on the Header, Hero, and Table components. Provided advisory support to the Team Leader and is the Assistant Team Leader. He also handled pull requests.
+3. Seanam Ekanem – Worked on the Footer component. She partnered with Kosisochukwu on the ContactForm component. She handled pull requests.
+4. Tabi Kelvin Ayo and Ebhodaghe Jeremiah – Worked on the Planets and VideoSection components. They also helped clarify the project assessment requirements. They handled pull requests.
+5. Mette Jude Chukwunonso – Partnered with Ifeoluwa to work on the Hero and Table components.
 
 ## Technologies Used
-
 * React
 * Vite
 * JavaScript
+* HTML
 * CSS
 * Fetch API
 * Git & GitHub
+* Netlify & Vercel
 
-## API Used
+## How to Run the Project Locally
+To run this project locally on your computer, follow these steps:
 
-https://anurella.github.io/json/planets.json
+# Clone the repository
+1. git clone <repository-link>
 
-## How to Run the Project
+# Navigate into the project folder
+2. cd <project-folder>
 
-```bash
-npm install
-npm run dev
-```
+# Install all dependencies
+3. npm install
 
-## React + Vite
+# Start the development server
+4. npm run dev
 
-This project was built using React with Vite for fast development and hot module replacement (HMR).
+## After running the last command, open the local server link shown in the terminal (usually http://localhost:5173
+## ) in your browser to view the project.
 
-Official plugins:
-
-* @vitejs/plugin-react
-* @vitejs/plugin-react-swc
-
-## Expanding ESLint Configuration
-
-For production applications, TypeScript and type-aware lint rules are recommended.
+## Live Deployment Link
+https://frontend-group-8-capstone-project.netlify.app/
