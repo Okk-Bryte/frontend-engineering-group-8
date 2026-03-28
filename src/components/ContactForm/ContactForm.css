@@ -16,11 +16,6 @@
   text-align: left;
 }
 
-.contact-desc p {
-  colour: obsidian;
-  text-align: left;
-}
-
 .submit-btn {
   background: #164baf;
   align-self: flex-start;
@@ -29,10 +24,10 @@
 /* Description */
 .contact-desc {
   font-size: 15px;
-  color: var(--text-mid);
+  colour: obsidian;
+  text-align: left;
   margin-bottom: 50px;
   max-width: 640px;
-  text-align: center;
   line-height: 1.6;
 }
 
