@@ -55,7 +55,7 @@
 .btn-outline {
   background-color: transparent;
   color: white;
-  width: 125px;
+  width: 130px;
   border: 1px solid white;
   padding: 11px 26px;
   cursor: pointer;
@@ -63,7 +63,6 @@
 }
 
 .btn-primary {
-  width: 125px;
   padding: 11px 26px;
   cursor: pointer;
   border-radius: 6px;
