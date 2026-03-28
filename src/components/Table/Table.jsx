@@ -1,5 +1,5 @@
-import { TABLE_DATA } from '../../data/planetsData';
-import './PlanetTable.css';
+import { TABLE_DATA } from '../../data/planetsData.js';
+import './Table.css';
 
 function PlanetTable() {
   return (
