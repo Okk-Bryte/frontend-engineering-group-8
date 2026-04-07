@@ -3,15 +3,15 @@ import './Planets.css'
 import PlanetCard from './PlanetCard.jsx'
 
 const PLANET_IMAGES = {
-  Mercury: 'https://images.pexels.com/photos/39561/solar-flare-sun-eruption-energy-39561.jpeg',
+  Mercury: 'https://images.pexels.com/photos/12498795/pexels-photo-12498795.jpeg',
   Venus:   'https://images.pexels.com/photos/12498801/pexels-photo-12498801.jpeg',
-  Earth:   'https://images.pexels.com/photos/41953/earth-blue-planet-globe-planet-41953.jpeg',
-  Mars:    'https://images.pexels.com/photos/20376404/pexels-photo-20376404.jpeg',
-  Jupiter: 'https://images.pexels.com/photos/20337599/pexels-photo-20337599.jpeg',
-  Saturn:  'https://images.pexels.com/photos/32961168/pexels-photo-32961168.png',
-  Uranus:  'https://images.pexels.com/photos/12498810/pexels-photo-12498810.jpeg',
-  Neptune: 'https://images.pexels.com/photos/12498776/pexels-photo-12498776.jpeg',
-  Pluto:   'https://images.pexels.com/photos/39514/hubble-space-telescope-galaxy-universe-39514.jpeg'
+  Earth:   'https://images.pexels.com/photos/12498815/pexels-photo-12498815.jpeg',
+  Mars:    'https://images.pexels.com/photos/20376403/pexels-photo-20376403.jpeg',
+  Jupiter: 'https://images.pexels.com/photos/20337602/pexels-photo-20337602.jpeg',
+  Saturn:  'https://images.pexels.com/photos/12498805/pexels-photo-12498805.jpeg',
+  Uranus:  'https://images.pexels.com/photos/20337595/pexels-photo-20337595.jpeg',
+  Neptune: 'https://images.pexels.com/photos/12498810/pexels-photo-12498810.jpeg',
+  Pluto:   'https://images.pexels.com/photos/12498776/pexels-photo-12498776.jpeg'
 }
 
 function formatDistance(km) {
